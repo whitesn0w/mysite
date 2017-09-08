@@ -43,10 +43,9 @@ $result = mysqli_query($link, $sql);
 
 /* Удаление записи из БД */
 
-if (isset($_GET['id'])){
+if (isset($_GET['del'])){
 
-	$id = ($_GET['id']);
-	echo "$id";
+	$id = ($_GET['del']);
 
 	$query ="DELETE FROM msgs WHERE id = '$id'";
 
@@ -89,7 +88,7 @@ Email: <br /><input type="text" name="email" /><br />
 	 			<?= $key['msg']; ?>
 	 			<?= $key['datetime'];?>
  			</p>
- 			<p align="right"><a href="http://mysite.ru/index.php?id=gbook&del=">
+ 			<p align="right"><a href="http://mysite.ru/index.php?id=sbook&del=<?php echo $key['id']; ?>">
 Удалить</a></p>
  			
  			<?php
